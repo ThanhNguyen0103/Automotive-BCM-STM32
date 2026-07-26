@@ -7,7 +7,6 @@
 
 #include "ignition.h"
 #include "button.h"
-#include "led.h"
 #include "can.h"
 static IgnitionState_t ignitionState;
 static Button_t ignitionButton;
@@ -22,7 +21,6 @@ IgnitionState_t Ignition_GetState(void) {
 void Ignition_Run(void) {
 	Button_Update(&ignitionButton);
 	if (Button_IsPressed(&ignitionButton)) {
-		Toggle_Led();
 		ignitionState =
 				(ignitionState == IGNITION_OFF) ? IGNITION_ON : IGNITION_OFF;
 

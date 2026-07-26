@@ -8,6 +8,10 @@
 #ifndef DRIVERS_LED_H_
 #define DRIVERS_LED_H_
 
+#include "stdbool.h"
+#include "stdint.h"
+#include "main.h"
+
 typedef struct {
 	GPIO_TypeDef *GPIOx;
 	uint16_t GPIO_Pin;
