@@ -12,6 +12,7 @@
 #include "vehiclespeed.h"
 #include "brake.h"
 #include "turnsignal.h"
+#include "cruisecontrol.h"
 
 void App_Init(void) {
 	Dashboard_Init();
@@ -20,6 +21,7 @@ void App_Init(void) {
 	VehicleSpeed_Init();
 	Brake_Init();
 	TurnSignal_Init();
+	Cruise_Init();
 
 }
 void App_Run(void) {
@@ -29,6 +31,7 @@ void App_Run(void) {
 	VehicleSpeed_Run();
 	Brake_Run();
 	TurnSignal_Run();
+	Cruise_Run();
 
 	Dashboard_Run();
 

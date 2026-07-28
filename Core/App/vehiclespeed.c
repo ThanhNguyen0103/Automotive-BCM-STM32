@@ -11,6 +11,8 @@
 #include "ignition.h"
 #include"can.h"
 #include "brake.h"
+#include "cruisecontrol.h"
+
 static uint32_t currentSpeed = 0;
 
 void VehicleSpeed_Init(void) {
@@ -19,11 +21,13 @@ void VehicleSpeed_Init(void) {
 
 void VehicleSpeed_Run(void) {
 
+	uint32_t targetSpeed;
+
 	if (Ignition_GetState() == IGNITION_OFF) {
 		if (currentSpeed > 0) {
 			currentSpeed--;
 		}
-		return currentSpeed;
+		return;
 	}
 
 	Driving_Mode_t mode = DrivingMode_GetState();
@@ -32,7 +36,11 @@ void VehicleSpeed_Run(void) {
 
 	const uint32_t adc_value = ADC_ReadValue();
 
-	const uint32_t targetSpeed = (adc_value * maxSpeed) / 4095;
+	if (Cruise_IsEnabled()) {
+		targetSpeed = Cruise_GetSetSpeed();
+	} else {
+		targetSpeed = (adc_value * maxSpeed) / 4095;
+	}
 
 	if (Brake_GetState() == BRAKE_ON) {
 		if (currentSpeed > 0)
