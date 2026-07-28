@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef APP_BRAKE_H_
-#define APP_BRAKE_H_
+#ifndef APPLICATION_BRAKE_H_
+#define APPLICATION_BRAKE_H_
 
 typedef enum {
 	BRAKE_OFF, BRAKE_ON
@@ -16,4 +16,4 @@ void Brake_Init(void);
 void Brake_Run(void);
 Brake_State_t Brake_GetState(void);
 
-#endif /* APP_BRAKE_H_ */
+#endif /* APPLICATION_BRAKE_H_ */

@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef DRIVERS_BUTTON_H_
-#define DRIVERS_BUTTON_H_
+#ifndef DRIVERS_BUTTON_BUTTON_H_
+#define DRIVERS_BUTTON_BUTTON_H_
 
 #include <stdbool.h>
 #include "main.h"
@@ -32,4 +32,4 @@ bool Button_IsReleased(Button_t *button);
 bool Button_IsPressed(Button_t *button);
 bool Button_IsHolding(Button_t *button);
 
-#endif /* DRIVERS_BUTTON_H_ */
+#endif /* DRIVERS_BUTTON_BUTTON_H_ */

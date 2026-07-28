@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
+#include <LED/led.h>
 #include "main.h"
-#include "led.h"
 void Led_Init(Led_t *led, GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
 	led->GPIOx = GPIOx;
 	led->GPIO_Pin = GPIO_Pin;

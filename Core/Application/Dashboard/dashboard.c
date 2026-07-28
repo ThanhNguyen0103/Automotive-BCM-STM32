@@ -6,12 +6,13 @@
  */
 
 #include "dashboard.h"
-#include "ignition.h"
-#include "drivingmode.h"
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
-#include "vehiclespeed.h"
-#include "cruisecontrol.h"
+
+#include "CruiseControl/cruisecontrol.h"
+#include "DrivingMode/drivingmode.h"
+#include "Ignition/ignition.h"
+#include "VehicleSpeed/vehiclespeed.h"
 
 static IgnitionState_t preIgnition = IGNITION_OFF;
 static Driving_Mode_t preMode = ECO_MODE;

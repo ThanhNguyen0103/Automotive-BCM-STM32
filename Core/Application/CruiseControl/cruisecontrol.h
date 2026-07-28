@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef APP_CRUISECONTROL_H_
-#define APP_CRUISECONTROL_H_
+#ifndef APPLICATION_CRUISECONTROL_H_
+#define APPLICATION_CRUISECONTROL_H_
 #include "stdbool.h"
 #include "stdint.h"
 
@@ -26,4 +26,4 @@ void Cruise_Init(void);
 
 void Cruise_Run(void);
 
-#endif /* APP_CRUISECONTROL_H_ */
+#endif /* APPLICATION_CRUISECONTROL_H_ */

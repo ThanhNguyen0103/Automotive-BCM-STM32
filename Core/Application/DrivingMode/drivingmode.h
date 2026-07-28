@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef APP_DRIVINGMODE_H_
-#define APP_DRIVINGMODE_H_
+#ifndef APPLICATION_DRIVINGMODE_H_
+#define APPLICATION_DRIVINGMODE_H_
 
 typedef enum {
 	ECO_MODE, SPORT_MODE,
@@ -18,4 +18,4 @@ Driving_Mode_t DrivingMode_GetState(void);
 
 void DrivingMode_Init(void);
 void DrivingMode_Run(void);
-#endif /* APP_DRIVINGMODE_H_ */
+#endif /* APPLICATION_DRIVINGMODE_H_ */

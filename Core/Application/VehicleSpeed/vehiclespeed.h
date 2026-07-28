@@ -5,10 +5,10 @@
  *      Author: nguyz
  */
 
-#ifndef APP_VEHICLESPEED_H_
-#define APP_VEHICLESPEED_H_
+#ifndef APPLICATION_VEHICLESPEED_H_
+#define APPLICATION_VEHICLESPEED_H_
 #include "stdint.h"
 void VehicleSpeed_Init(void);
 void VehicleSpeed_Run(void);
 uint32_t VehicleSpeed_GetSpeed(void);
-#endif /* APP_VEHICLESPEED_H_ */
+#endif /* APPLICATION_VEHICLESPEED_H_ */

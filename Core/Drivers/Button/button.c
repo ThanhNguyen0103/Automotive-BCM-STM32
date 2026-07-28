@@ -5,7 +5,7 @@
  *      Author: nguyz
  */
 
-#include "button.h"
+#include <Button/button.h>
 
 void Button_Init(Button_t *button, GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
 

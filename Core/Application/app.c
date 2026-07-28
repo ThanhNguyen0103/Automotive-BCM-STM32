@@ -5,14 +5,14 @@
  *      Author: nguyz
  */
 
-#include "app.h"
-#include "ignition.h"
-#include "dashboard.h"
-#include"drivingmode.h"
-#include "vehiclespeed.h"
-#include "brake.h"
-#include "turnsignal.h"
-#include "cruisecontrol.h"
+#include <app.h>
+#include "Dashboard/dashboard.h"
+#include "TurnSignal/turnsignal.h"
+#include "VehicleSpeed/vehiclespeed.h"
+#include "Brake/brake.h"
+#include "CruiseControl/cruisecontrol.h"
+#include "DrivingMode/drivingmode.h"
+#include "Ignition/ignition.h"
 
 void App_Init(void) {
 	Dashboard_Init();
@@ -27,11 +27,16 @@ void App_Init(void) {
 void App_Run(void) {
 
 	Ignition_Run();
+
 	DrivingMode_Run();
-	VehicleSpeed_Run();
+
 	Brake_Run();
-	TurnSignal_Run();
+
 	Cruise_Run();
+
+	VehicleSpeed_Run();
+
+	TurnSignal_Run();
 
 	Dashboard_Run();
 

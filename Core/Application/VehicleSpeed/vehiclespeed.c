@@ -5,13 +5,19 @@
  *      Author: nguyz
  */
 
+#include <ADC/adc.h>
 #include "vehiclespeed.h"
-#include "drivingmode.h"
-#include "adc.h"
-#include "ignition.h"
-#include"can.h"
-#include "brake.h"
-#include "cruisecontrol.h"
+
+#include "Brake/brake.h"
+#include "CruiseControl/cruisecontrol.h"
+#include "DrivingMode/drivingmode.h"
+#include "Ignition/ignition.h"
+
+#define ADC_MAX_VALUE 4095
+
+#define ECO_MAX_SPEED 45
+
+#define SPORT_MAX_SPEED 70
 
 static uint32_t currentSpeed = 0;
 
@@ -32,14 +38,15 @@ void VehicleSpeed_Run(void) {
 
 	Driving_Mode_t mode = DrivingMode_GetState();
 
-	const uint32_t maxSpeed = (mode == ECO_MODE) ? 45 : 70;
+	const uint32_t maxSpeed =
+			(mode == ECO_MODE) ? ECO_MAX_SPEED : SPORT_MAX_SPEED;
 
 	const uint32_t adc_value = ADC_ReadValue();
 
 	if (Cruise_IsEnabled()) {
 		targetSpeed = Cruise_GetSetSpeed();
 	} else {
-		targetSpeed = (adc_value * maxSpeed) / 4095;
+		targetSpeed = (adc_value * maxSpeed) / ADC_MAX_VALUE;
 	}
 
 	if (Brake_GetState() == BRAKE_ON) {

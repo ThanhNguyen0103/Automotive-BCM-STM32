@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef APP_TURNSIGNAL_H_
-#define APP_TURNSIGNAL_H_
+#ifndef APPLICATION_TURNSIGNAL_H_
+#define APPLICATION_TURNSIGNAL_H_
 
 typedef enum {
 	TURN_OFF = 0, TURN_LEFT, TURN_RIGHT, TURN_HAZARD
@@ -15,4 +15,4 @@ typedef enum {
 void TurnSignal_Init(void);
 void TurnSignal_Run(void);
 TurnSignalState_t TurnSignal_GetState(void);
-#endif /* APP_TURNSIGNAL_H_ */
+#endif /* APPLICATION_TURNSIGNAL_H_ */

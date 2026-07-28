@@ -5,10 +5,10 @@
  *      Author: nguyz
  */
 
-#ifndef APP_APP_H_
-#define APP_APP_H_
+#ifndef APPLICATION_APP_H_
+#define APPLICATION_APP_H_
 
 void App_Init(void);
 void App_Run(void);
 
-#endif /* APP_APP_H_ */
+#endif /* APPLICATION_APP_H_ */

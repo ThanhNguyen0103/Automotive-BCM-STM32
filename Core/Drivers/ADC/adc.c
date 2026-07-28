@@ -4,8 +4,7 @@
  *  Created on: Jul 12, 2026
  *      Author: nguyz
  */
-#include "adc.h"
-
+#include <ADC/adc.h>
 extern ADC_HandleTypeDef hadc1;
 
 void ADC_Init(void) {

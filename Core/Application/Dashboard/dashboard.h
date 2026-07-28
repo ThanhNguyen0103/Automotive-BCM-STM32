@@ -5,9 +5,9 @@
  *      Author: nguyz
  */
 
-#ifndef APP_DASHBOARD_H_
-#define APP_DASHBOARD_H_
+#ifndef APPLICATION_DASHBOARD_H_
+#define APPLICATION_DASHBOARD_H_
 
 void Dashboard_Run(void);
 void Dashboard_Init(void);
-#endif /* APP_DASHBOARD_H_ */
+#endif /* APPLICATION_DASHBOARD_H_ */

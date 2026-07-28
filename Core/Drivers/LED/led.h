@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef DRIVERS_LED_H_
-#define DRIVERS_LED_H_
+#ifndef DRIVERS_LED_LED_H_
+#define DRIVERS_LED_LED_H_
 
 #include "stdbool.h"
 #include "stdint.h"
@@ -39,4 +39,4 @@ void Led_Blink(Led_t *led);
 
 bool Led_IsOn(Led_t *led);
 
-#endif /* DRIVERS_LED_H_ */
+#endif /* DRIVERS_LED_LED_H_ */

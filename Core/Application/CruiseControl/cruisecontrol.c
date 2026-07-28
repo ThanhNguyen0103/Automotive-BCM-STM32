@@ -5,11 +5,12 @@
  *      Author: nguyz
  */
 
+#include <Button/button.h>
 #include "cruisecontrol.h"
-#include "vehiclespeed.h"
-#include "button.h"
-#include "brake.h"
-#include "ignition.h"
+
+#include "Brake/brake.h"
+#include "Ignition/ignition.h"
+#include "VehicleSpeed/vehiclespeed.h"
 
 static uint32_t setSpeed = 0;
 static Cruise_State_t cruiseState = CRUISE_OFF;
@@ -27,7 +28,9 @@ void Cruise_Run(void) {
 		if (cruiseState) {
 			Cruise_Disable();
 		} else {
-			Cruise_Enable();
+			if (VehicleSpeed_GetSpeed() > 20) {
+				Cruise_Enable();
+			}
 		}
 	}
 
@@ -35,6 +38,9 @@ void Cruise_Run(void) {
 		Cruise_Disable();
 	}
 	if (Brake_GetState() == BRAKE_ON) {
+		Cruise_Disable();
+	}
+	if (VehicleSpeed_GetSpeed() < 20) {
 		Cruise_Disable();
 	}
 }
@@ -49,7 +55,6 @@ uint32_t Cruise_GetSetSpeed(void) {
 void Cruise_Enable(void) {
 	cruiseState = CRUISE_ON;
 	setSpeed = VehicleSpeed_GetSpeed();
-
 }
 
 void Cruise_Disable(void) {

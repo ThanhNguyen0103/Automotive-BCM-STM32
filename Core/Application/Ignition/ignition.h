@@ -5,8 +5,8 @@
  *      Author: nguyz
  */
 
-#ifndef APP_IGNITION_H_
-#define APP_IGNITION_H_
+#ifndef APPLICATION_IGNITION_H_
+#define APPLICATION_IGNITION_H_
 
 void Ignition_Run(void);
 void Ignition_Init(void);
@@ -17,4 +17,4 @@ typedef enum {
 
 IgnitionState_t Ignition_GetState(void);
 
-#endif /* APP_IGNITION_H_ */
+#endif /* APPLICATION_IGNITION_H_ */

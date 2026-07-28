@@ -5,9 +5,12 @@
  *      Author: nguyz
  */
 
+#include <Button/button.h>
+#include <LED/led.h>
 #include "turnsignal.h"
-#include "led.h"
-#include "button.h"
+
+
+#define BLINK_PERIOD_MS 500
 
 static Button_t button_left;
 static Button_t button_right;
@@ -51,7 +54,7 @@ void TurnSignal_Run(void) {
 		Led_Off(&led_right);
 		break;
 	case TURN_HAZARD:
-		if (HAL_GetTick() - lastBlinkTick > 500) {
+		if (HAL_GetTick() - lastBlinkTick > BLINK_PERIOD_MS) {
 			lastBlinkTick = HAL_GetTick();
 			blinkState = !blinkState;
 			if (blinkState) {

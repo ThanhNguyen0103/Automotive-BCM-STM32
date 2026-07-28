@@ -5,9 +5,10 @@
  *      Author: nguyz
  */
 
-#include "drivingmode.h"
-#include "button.h"
-#include "ignition.h"
+#include <Button/button.h>
+#include "DrivingMode/drivingmode.h"
+#include "Ignition/ignition.h"
+
 static Driving_Mode_t drivingMode;
 static Button_t driving_button_mode;
 

@@ -5,9 +5,10 @@
  *      Author: nguyz
  */
 
+#include <Button/button.h>
 #include "ignition.h"
-#include "button.h"
-#include "can.h"
+
+
 static IgnitionState_t ignitionState;
 static Button_t ignitionButton;
 void Ignition_Init(void) {

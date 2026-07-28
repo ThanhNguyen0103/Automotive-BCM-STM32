@@ -5,9 +5,10 @@
  *      Author: nguyz
  */
 
-#include "button.h"
+#include <Button/button.h>
+#include <LED/led.h>
 #include "brake.h"
-#include "led.h"
+
 
 static Button_t brakeButton;
 static Brake_State_t brakeState;
@@ -23,9 +24,11 @@ void Brake_Run(void) {
 	if (Button_IsHolding(&brakeButton)) {
 		brakeState = BRAKE_ON;
 		Led_On(&ledBrake);
-	} else
+	} else {
 		brakeState = BRAKE_OFF;
-	Led_Off(&ledBrake);
+		Led_Off(&ledBrake);
+	}
+
 }
 
 Brake_State_t Brake_GetState(void) {
