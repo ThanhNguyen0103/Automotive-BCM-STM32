@@ -71,3 +71,7 @@ void TurnSignal_Run(void) {
 
 }
 
+TurnSignalState_t TurnSignal_GetState(void) {
+	return turnState;
+}
+

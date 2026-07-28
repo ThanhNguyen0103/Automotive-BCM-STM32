@@ -14,5 +14,5 @@ typedef enum {
 
 void TurnSignal_Init(void);
 void TurnSignal_Run(void);
-
+TurnSignalState_t TurnSignal_GetState(void);
 #endif /* APP_TURNSIGNAL_H_ */
