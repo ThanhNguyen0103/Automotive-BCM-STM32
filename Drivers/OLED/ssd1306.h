@@ -92,10 +92,10 @@ _BEGIN_STD_C
 #endif
 
 #ifndef SSD1306_Reset_Port
-#define SSD1306_Reset_Port      GPIOA
+#define SSD1306_Reset_Port      GPIOB
 #endif
 #ifndef SSD1306_Reset_Pin
-#define SSD1306_Reset_Pin       GPIO_PIN_2
+#define SSD1306_Reset_Pin       GPIO_PIN_0
 #endif
 
 /* ^^^ SPI config ^^^ */
