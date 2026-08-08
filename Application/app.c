@@ -14,6 +14,7 @@
 #include "BCM/TurnSignal/turnsignal.h"
 #include "BCM/VehicleSpeed/vehiclespeed.h"
 #include "CAN/can_manager.h"
+#include "Drivers/Timer/timer.h"
 
 void App_Init(void) {
 
@@ -33,6 +34,8 @@ void App_Init(void) {
 
 	TurnSignal_Init();
 
+	Timer_Init();
+
 }
 void App_Run(void) {
 
@@ -44,9 +47,13 @@ void App_Run(void) {
 
 	Cruise_Run();
 
-	VehicleSpeed_Run();
-
 	TurnSignal_Run();
+
+	if (Timer_IsSpeedUpdate()) {
+		Timer_ClearSpeedUpdate();
+
+		VehicleSpeed_TimerUpdate();
+	}
 
 	CANManager_Run();
 

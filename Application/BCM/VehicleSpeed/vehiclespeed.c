@@ -24,7 +24,7 @@ void VehicleSpeed_Init(void) {
 	ADC_Init();
 }
 
-void VehicleSpeed_Run(void) {
+void VehicleSpeed_TimerUpdate(void) {
 
 	uint32_t targetSpeed;
 
@@ -40,11 +40,10 @@ void VehicleSpeed_Run(void) {
 	const uint32_t maxSpeed =
 			(mode == ECO_MODE) ? ECO_MAX_SPEED : SPORT_MAX_SPEED;
 
-	const uint32_t adc_value = ADC_ReadValue();
-
 	if (Cruise_IsEnabled()) {
 		targetSpeed = Cruise_GetSetSpeed();
 	} else {
+		uint32_t adc_value = ADC_ReadValue();
 		targetSpeed = (adc_value * maxSpeed) / ADC_MAX_VALUE;
 	}
 

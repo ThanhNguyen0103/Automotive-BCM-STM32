@@ -11,7 +11,7 @@
 #include "stdint.h"
 
 void VehicleSpeed_Init(void);
-void VehicleSpeed_Run(void);
+void VehicleSpeed_TimerUpdate(void);
 uint32_t VehicleSpeed_GetSpeed(void);
 
 #endif /* APPLICATION_VEHICLESPEED_H_ */

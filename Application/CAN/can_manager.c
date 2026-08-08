@@ -10,7 +10,7 @@
 #include "BCM/VehicleSpeed/vehiclespeed.h"
 #include "BCM/DrivingMode/drivingmode.h"
 #include "BCM/TurnSignal/turnsignal.h"
-#include "Common/config.h"
+#include "can_ids.h"
 
 void CANManager_Init(void) {
 	CAN_Init();

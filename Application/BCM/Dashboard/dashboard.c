@@ -10,7 +10,7 @@
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
 #include "Drivers/CAN/can.h"
-#include "Common/config.h"
+#include "CAN/can_ids.h"
 
 static void Dashboard_UpdateDisplay(void);
 static DashboardData_t dashboard;
