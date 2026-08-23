@@ -10,6 +10,7 @@
 #include "BCM/VehicleSpeed/vehiclespeed.h"
 #include "BCM/DrivingMode/drivingmode.h"
 #include "BCM/TurnSignal/turnsignal.h"
+#include "BCM/CruiseControl/cruisecontrol.h"
 #include "can_ids.h"
 
 void CANManager_Init(void) {
@@ -79,6 +80,21 @@ void CANManager_SendDrivingMode(void) {
 	CAN_Send(&frame);
 }
 
+void CANManager_SendCruiseControl(void) {
+	static Cruise_State_t lastCruiseControl = CRUISE_OFF;
+	Cruise_State_t CruiseControl = Cruise_IsEnabled();
+
+	if (CruiseControl == lastCruiseControl)
+		return;
+
+	lastCruiseControl = CruiseControl;
+	CAN_Frame_t frame;
+	frame.id = CAN_ID_CRUISE;
+	frame.dlc = 1;
+	frame.data[0] = (uint8_t) CruiseControl;
+
+	CAN_Send(&frame);
+}
 void CANManager_Run(void) {
 
 	CANManager_SendIgnition();
@@ -88,5 +104,7 @@ void CANManager_Run(void) {
 	CANManager_SendSpeed();
 
 	CANManager_SendDrivingMode();
+
+	CANManager_SendCruiseControl();
 }
 

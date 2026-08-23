@@ -15,8 +15,8 @@ static Led_t ledBrake;
 
 void Brake_Init(void) {
 	brakeState = BRAKE_OFF;
-	Button_Init(&brakeButton, GPIOB, GPIO_PIN_15);
-	Led_Init(&ledBrake, GPIOB, GPIO_PIN_1);
+	Button_Init(&brakeButton, GPIOB, GPIO_PIN_1);
+	Led_Init(&ledBrake, GPIOA, GPIO_PIN_3);
 }
 void Brake_Run(void) {
 	Button_Update(&brakeButton);

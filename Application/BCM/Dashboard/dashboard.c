@@ -58,6 +58,9 @@ void Dashboard_Run(void) {
 		case CAN_ID_TURNSIGNAL:
 			dashboard.signal = frame.data[0];
 			break;
+		case CAN_ID_CRUISE:
+			dashboard.cruise = frame.data[0];
+			break;
 		}
 	}
 	Dashboard_UpdateDisplay();
@@ -78,6 +81,9 @@ static void Dashboard_UpdateDisplay(void) {
 
 	ssd1306_SetCursor(80, 20);
 	ssd1306_WriteString(str, Font_7x10, White);
+
+	ssd1306_SetCursor(80, 30);
+	ssd1306_WriteString(dashboard.cruise ? "ON " : "OFF", Font_7x10, White);
 
 	ssd1306_SetCursor(80, 40);
 
