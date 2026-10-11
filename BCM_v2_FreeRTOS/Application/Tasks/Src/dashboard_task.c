@@ -5,7 +5,7 @@
  *      Author: nguyz
  */
 
-#include "dashboard_task.h"
+#include "Tasks/Inc/dashboard_task.h"
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -14,7 +14,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#include "CAN/can_task.h"
+#include "Tasks/Inc/can_task.h"
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
 
@@ -138,11 +138,10 @@ static void Dashboard_ShowStatus(const CAN_Status_t *status) {
 	ssd1306_WriteString(buffer, Font_7x10, White);
 
 	/* Brake */
-	ssd1306_SetCursor(0, 50);
-	(void) snprintf(buffer, sizeof(buffer), "BRAKE: %s", brakeText);
-	ssd1306_WriteString(buffer, Font_7x10, White);
-
-	ssd1306_SetCursor(0, 58);
+//	ssd1306_SetCursor(0, 50);
+//	(void) snprintf(buffer, sizeof(buffer), "BRAKE: %s", brakeText);
+//	ssd1306_WriteString(buffer, Font_7x10, White);
+	ssd1306_SetCursor(0, 55);
 	(void) snprintf(buffer, sizeof(buffer), "CRUISE: %s", cruiseText);
 	ssd1306_WriteString(buffer, Font_7x10, White);
 	ssd1306_UpdateScreen();
